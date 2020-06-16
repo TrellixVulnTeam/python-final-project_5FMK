@@ -2,7 +2,7 @@
 A repository to contribute with teammates .
 
 # NOTE
-Since this is my experience of GitHub,
+Since this is my first experience of GitHub,
 
 i'll do lots of trials and tests .
 
