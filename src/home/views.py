@@ -288,10 +288,21 @@ def remove(request):
 
             cc = list(json.loads(str(stu.CurrentCourses).replace("\'", "\"")))
             uc = list(json.loads(str(stu.UndergraduateCourses).replace("\'", "\"")))
-            for i in range(len(cc)):
+
+            length = len(cc)
+            if length == 1:
+                if cc[0]["id"] == int(request.POST.get("code")):
+                    uc.append(cc[0])
+                    del cc[0]
+
+            length = len(cc)
+            i = 0
+            while i < length - 1:
                 if cc[i]["id"] == int(request.POST.get("code")):
                     uc.append(cc[i])
                     del cc[i]
+                else:
+                    i += 1
 
             stu.CurrentCourses = json.dumps(cc)
             stu.UndergraduateCourses = json.dumps(uc)
