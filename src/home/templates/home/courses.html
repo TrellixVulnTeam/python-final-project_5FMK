@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+    <link rel="icon"
+          href="http://uupload.ir/files/ak27_header.jpg"
+          type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: white
+  }
+
+.bio-photo {
+  display: block;
+  width: 50px;
+  height: auto;
+}
+
+.img-hover {
+  position: relative;
+  width: 100px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgba(0,0,0,0.25);
+  border-radius:50%;
+}
+
+.img-hover:hover .overlay {
+  opacity: 1;
+}
+
+.hover-text {
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin: left;
+
+}
+
+.column {
+  float: left;
+  width: 300px;
+  padding: 10px;
+  height: 400px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.inform {
+  height: 100%;
+  position: fixed;
+  margin-left: 160px;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 50px;
+  display: block;
+  background-color: #780000;
+}
+
+.sidebar {
+  height: 100%;
+  width: 165px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #780000;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #780000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #780000;
+}
+
+.sidebar button {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: black;
+display: inline-block;
+border: none;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.sidebar button:hover {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.sidebar button:active {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.sidebar button:focus {
+text-align: center;
+outline: none;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+   .column {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <form action="{% url 'home:student' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-home"></i>Home</button>
+    </form>
+    <form action="{% url 'home:profile' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-user"></i> Profile</button>
+    </form>
+    <form action="{% url 'home:courses' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-book"></i> Courses</button>
+    </form>
+    <form action="{% url 'home:selection' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-check"></i><small><small>Register Courses</small></small></button>
+    </form>
+    <form action="{% url 'home:Drop' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-remove"></i><small>Drop Courses</small></button>
+    </form>
+    <form action="{% url 'home:point' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><small>Report Card</small></button>
+    </form>
+    <form action="{% url 'home:tuition' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-credit-card" aria-hidden="true"></i><small>Tuition</small>
+        </button>
+    </form>
+    <form action="{% url 'Login' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit" style="position: absolute;display: block;bottom: 0;left: 0px;padding-bottom: 40px;"><i
+                class="fa fa-fw fa-sign-out"></i> Log Out
+        </button>
+    </form>
+</div>
+
+
+<div>
+    <form action="" class="inform">
+        <div class="row">
+            <div class="column" style="height: 110px;background-color: #780000;">
+                <h1>Passed Courses:</h1>
+            </div>
+            <div class="column" style="height: 110px;background-color: #780000;">
+                <h1>Current Courses:</h1>
+            </div>
+            <div class="column" style="height: 110px;background-color: #780000;">
+                <h1>Undergraduate Courses:</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column" style="overflow: scroll;overflow-x: hidden;background-color: #780000;">
+                <div class="passed">
+                    {% for course in passed %}
+                    <p>{{course.Course}} : {{Course.FinalPoint}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="column" style="overflow: scroll;overflow-x: hidden;background-color: #780000;">
+                <div class="current">
+                    {% for course in current %}
+                    <p>{{course.Course}} : {{Course.FinalPoint}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="column" style="overflow: scroll;overflow-x: hidden;background-color: #780000;">
+                <div class="passed">
+                    {% for course in undergraduate %}
+                    <p>{{course}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
+

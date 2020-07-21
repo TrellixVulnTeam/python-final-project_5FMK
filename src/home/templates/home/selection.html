@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Selection</title>
+    <link rel="icon"
+          href="http://uupload.ir/files/ak27_header.jpg"
+          type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: white
+  }
+
+.bio-photo {
+  display: block;
+  width: 50px;
+  height: auto;
+}
+
+.img-hover {
+  position: relative;
+  width: 100px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgba(0,0,0,0.25);
+  border-radius:50%;
+}
+
+.img-hover:hover .overlay {
+  opacity: 1;
+}
+
+.hover-text {
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin: left;
+
+}
+
+.column {
+  float: left;
+  width: 550px;
+  padding: 10px;
+  height: 400px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.inform {
+  height: 100%;
+  margin-left: 160px;
+  top: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 50px;
+  display: block;
+  background-color: #780000;
+  margin-up: 0px;
+  margin-down: 0px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 165px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #780000;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+#table-wrapper {
+  position:relative;
+}
+
+#table-wrapper-1 {
+  position:relative;
+}
+
+#table-scroll {
+  height:350px;
+  overflow:auto;
+  margin-top:20px;
+}
+
+#table-scroll-1 {
+  height:350px;
+  overflow:auto;
+  margin-top:20px;
+}
+
+#table-wrapper table {
+  width:100%;
+}
+
+#table-wrapper-1 table {
+  width:100%;
+}
+
+#table-wrapper table * {
+  background: white;
+  color:black;
+}
+
+#table-wrapper table th .text {
+  position:absolute;
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+
+#table-wrapper-1 table * {
+  background: white;
+  color:black;
+}
+
+#table-wrapper-1 table th .text {
+  position:absolute;
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400px;
+  background-color: white
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+.sidebar button {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: black;
+display: inline-block;
+border: none;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.sidebar button:hover {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.sidebar button:active {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.sidebar button:focus {
+text-align: center;
+outline: none;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+   .column {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <form action="{% url 'home:student' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-home"></i>Home</button>
+    </form>
+    <form action="{% url 'home:profile' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-user"></i> Profile</button>
+    </form>
+    <form action="{% url 'home:courses' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-book"></i> Courses</button>
+    </form>
+    <form action="{% url 'home:selection' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-check"></i><small><small>Register Courses</small></small></button>
+    </form>
+    <form action="{% url 'home:Drop' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-remove"></i><small>Drop Courses</small></button>
+    </form>
+    <form action="{% url 'home:point' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><small>Report Card</small></button>
+    </form>
+    <form action="{% url 'home:tuition' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-credit-card" aria-hidden="true"></i><small>Tuition</small>
+        </button>
+    </form>
+    <form action="{% url 'home:Logout' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit" style="position: absolute;display: block;bottom: 0;left: 0px;padding-bottom: 40px;"><i
+                class="fa fa-fw fa-sign-out"></i> Log Out
+        </button>
+    </form>
+</div>
+
+
+<div>
+    <form class="inform" action="{% url 'home:select' %}" autocomplete="off" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <div class="row">
+            <div class="column" style="height: 110px;background-color: #780000;">
+                <h1>Undergraduate Courses:</h1>
+            </div>
+            <div class="column" style="height: 150px;background-color: #780000;">
+                <h1>Select courses:</h1>
+                <br>
+                enter course code: <input type="number" name="code" required>&nbsp;&nbsp;&nbsp;
+                <button type="submit">Register</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column" style="background-color: #780000;">
+                <div id="table-wrapper">
+                    <div id="table-scroll">
+                        <table>
+                            <tr>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Professor</th>
+                                <th>Class</th>
+                                <th>Enrollment Capacity</th>
+                                <th>Date</th>
+                                <th>Final</th>
+                            </tr>
+                            {% for course in undergraduate %}
+                            <tr>
+                                <td>{{course.id}}</td>
+                                <td>{{course.Course}}</td>
+                                <td>{{course.Teacher}}</td>
+                                <td>{{course.ClassNumber}}</td>
+                                <td>{{course.EnrollmentCapacity}}</td>
+                                <td>{{course.Date}}</td>
+                                <td>{{course.Final}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="column" style="background-color: #780000;">
+                <div id="table-wrapper-1">
+                    <div id="table-scroll-1">
+                        <table>
+                            <tr>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Professor</th>
+                                <th>Class</th>
+                                <th>Enrollment Capacity</th>
+                                <th>Date</th>
+                                <th>Final</th>
+                            </tr>
+                            {% for course in current %}
+                            <tr>
+                                <td>{{course.id}}</td>
+                                <td>{{course.Course}}</td>
+                                <td>{{course.Teacher}}</td>
+                                <td>{{course.ClassNumber}}</td>
+                                <td>{{course.EnrollmentCapacity}}</td>
+                                <td>{{course.Date}}</td>
+                                <td>{{course.Fianl}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <p style="color: yellow;"><strong>Attention: you cannot register more than 8 courses.</strong></p>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+

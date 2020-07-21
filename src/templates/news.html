@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Q university</title>
+    <link rel="icon"
+          href="http://uupload.ir/files/ak27_header.jpg"
+          type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: right;
+      background-color: black;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+      img {
+        vertical-align: right;
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: black;
+      }
+      .topnav a:hover {
+        background-color: white;
+        color: black;
+      }
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav a:hover {
+      background-color: white;
+      color: black;
+      }
+      .topnav a.active {
+      background-color: black;
+      color: white;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      header {
+      background-color: #780000;
+      padding: 15x;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+      }
+      section {
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+      }
+      nav {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        background: #333333;
+        padding: 20px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      article {
+        -webkit-flex: 3;
+        -ms-flex: 3;
+        flex: 3;
+        background-color: white;
+        padding: 10px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-position: right;
+      }
+      footer {
+      background-color: black;
+      padding: 10px;
+      height: 100px;
+      text-align: center;
+      color: white;
+}
+
+button {
+  background-color: #780000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 280px;
+}
+button:hover {
+  opacity: 0.8;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+span.psw {
+  float: left;
+  padding: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="topnav">
+    <a class="active" href="{% url 'Login' %}">Home</a>
+    <a href="{% url 'News' %}">News</a>
+    <a href="{% url 'about' %}">About</a>
+</div>
+<header style="height: 200px;">
+    <!--    https://i.imgur.com/G8xgSYu.jpg-->
+    <img src="http://uupload.ir/files/slpm_logo.jpg"
+         alt="Q University" width="200" height="200">
+</header>
+<section>
+    <article>
+        <div class="container" style="width: 100%; padding: 150px;">
+            <h1 style="font-size: 40px;">Fall 2020 plans</h1>
+            <h2 style="font-size: 20px;">July 20 , 2020</h2>
+            <p>On June 15, the Faculty of Arts and Sciences provided an interim report on fall planning efforts that
+                outlined three possible pathways for how we might return students to campus. After careful deliberation,
+                and informed by extensive input from our community, we write today to announce our plans to bring up to
+                40% of our undergraduates to campus, including all first-year students, for the fall semester. Assuming
+                that we maintain 40% density in the spring semester, <strong style="color: #780000;">we would again
+                    bring back one class, and our
+                    priority at this time is to bring seniors to campus. Under this plan, first years would return home
+                    and
+                    learn remotely in the spring. We also will invite back to campus those students who may not be able
+                    to
+                    learn successfully in their current home learning environment.</strong>
+                <br>
+                <br>
+                In making this consequential decision, we have been guided by the same core principles we established at
+                the outset of this crisis: to put health and safety first, protect the academic enterprise, leverage our
+                breadth and diversity, and preserve access and affordability. Some of the attributes that we most value
+                about our campus are exactly the things that make adaptation to pandemic conditions particularly
+                challenging. Our bustling urban environment, the ease of grabbing the T into Boston, our
+                intergenerational residential communities that house 98% of our undergraduates, our global research
+                community of students, faculty, staff, postdocs, and visitors from around the world—Q was built
+                for connection, not isolation. Without a vaccine or effective clinical treatments for the virus, we know
+                that no choice that reopens the campus is without risk. That said, we have worked closely with leading
+                epidemiologists and medical experts to define an approach that we believe will protect the health and
+                safety of our community, while also protecting our academic enterprise and providing students with the
+                conditions they need to be successful academically.
+                <br>
+                <br>
+                <strong style="color: #780000;">Q University is eager to welcome students and scholars back to campus and
+                    recapture the residential
+                    liberal
+                    arts and sciences experience that is core to our identity.</strong> In our planning efforts, we have
+                sought a
+                path to bringing all students back as soon as conditions allow, while continuing their academic progress
+                in the meantime and remaining a vibrant research community across our broad range of disciplines. But we
+                also recognize that, fundamentally, there is an intrinsic incompatibility between our highly
+                interactive, residential Q University College experience and the social distancing needed to mitigate
+                COVID-19 transmission. The recent upturn in COVID-19 cases in certain states illustrates the difficulty
+                of making predictions, even well-informed ones, about the evolution of this virus. Given this
+                uncertainty, we determined that our fall plan must enable us to bring back as many students as possible
+                while providing sufficient margin to accommodate an escalation in the prevalence of COVID-19 in our
+                area. Anything less and we could find ourselves again facing the prospect of asking our students to
+                leave, on short notice, prior to the end of the semester. Given the constraints imposed by our existing
+                housing inventory, we have made a decision that enables up to 40% of undergraduate students to learn
+                from campus in appropriate accommodations, while retaining the ability to isolate and quarantine up to
+                250 individuals at a time. Absent an effective vaccine or clinical therapy, this reduced density,
+                together with a high-cadence viral testing program and universal adoption of public health practices
+                such as face masks and frequent handwashing, is needed to safely host a significant number of
+                undergraduates on campus. This finding is supported by extensive modeling by our public health experts.
+                <br>
+                <br>
+                Choosing which students would be invited to campus was not easy, and we have enormous sympathy for
+                sophomores and juniors as they consider the prospect of not starting their fall term in Cambridge. We
+                could not help but recognize the unique position that first-year students find themselves in, making the
+                transition to college in these strange times. They have not yet begun to build their Q University network of
+                faculty, advisors, and friends or learn about life in the Yard. Even with the many adaptations that will
+                be in place this fall, we see enormous value in having them on campus in our residential system. Though
+                we are far from a decision about spring, as we describe below, making sure that seniors have their final
+                semester on campus, to finish their thesis work and complete their four-year journey, is a priority we
+                hold dear. With the experience of sophomores and juniors in mind, <strong style="color: #780000;">we
+                    have decided to extend to
+                    all
+                    students who spend the year studying away from campus the opportunity to attend Summer School in
+                    Cambridge without tuition charge in 2021.</strong> This program, described in more detail below, was
+                designed
+                also in recognition of the many international students and those with pre-existing medical conditions
+                who may not be able to join us on campus during the academic year.</p>
+            <h1 style="font-size: 20px;">REMOTE TEACHING AND LEARNING</h1>
+            <p>The interim planning report established that all course instruction (undergraduate and graduate) for the
+                2020-21 academic year will be delivered online. Students will learn remotely, whether or not they live
+                on campus. With that in mind, we have taken the following steps: </p>
+            <p><strong style="color: #780000;">Academic calendar and course scheduling</strong>: The fall term will
+                begin as planned on
+                September 2, 2020. The
+                instructional day will be expanded to accommodate synchronous instruction across a range of time zones.
+                The Registrar will soon issue guidance about fall semester course scheduling to the academic
+                departments.
+                <br>
+                <br>
+                <strong style="color: #780000;">Excellence in remote teaching</strong>: As we work to prepare for the
+                fall, we are guided by the
+                recognition that
+                the success of remote teaching depends on our ability to create and sustain strong connections among
+                students and between students and faculty. Q University’s learning technologists and specialists in
+                innovative pedagogy are supporting faculty and teaching fellows in the development of fall courses and
+                the design of activities and assignments that take advantage of the remote format and enable students to
+                achieve key goals, including for hands-on learning in lab and art-making courses. We are increasing
+                instructional support by recruiting graduate students as Bok Media and Design Fellows and Remote Support
+                Teaching Fellows. The Bok Center has also designed its fall teaching conference to help teaching fellows
+                prepare for their remote teaching responsibilities. More information about required instructor trainings
+                and other remote ready resources is available online.
+                <br>
+                <br>
+                <strong style="color: #780000;">Excellence in remote learning</strong>: We are working to ensure that
+                all students are prepared
+                for remote
+                learning. The Academic Resource Center has assembled dedicated remote learning resources and will be
+                offering orientations to all incoming first-year undergraduate students.
+                Grading: The emergency grading systems that were put in place in the spring semester will not continue
+                into the fall semester. Fall courses for all students will return to regular grading.
+                International students: Guidance for international students continues to evolve at a rapid pace. A town
+                hall for international undergraduate students will be held on July 8 and the graduate student town hall
+                meetings on July 7 and 8 will also include detailed information for international students. The latest
+                guidance and resources are available from the Q University International Office. One of the reasons that we
+                determined early in our process that we would rely upon remote instruction was that we expect many
+                international students will encounter challenges entering the country given that consular offices are
+                not processing F1 visas.</p>
+            <h1 style="font-size: 20px;">LEARNING REMOTELY FROM CAMPUS</h1>
+            <p>We know that students are eager to be on campus and we too are eager to return to full residential
+                operations. Informed by a careful review of our residential capacity, the academic needs of our
+                students, and guidance from public health experts, we have defined the group of undergraduate students
+                who will be invited to learn from campus this fall—first-year students and those who must be on campus
+                to progress academically.
+                <br>
+                <br>
+                All first-year undergraduate students will be invited to campus for the fall semester. This will enable
+                first-year students to benefit from a supported transition to college-level academic work and to begin
+                to build their Q University relationships with faculty and peers. Both online and dorm-based programs will be
+                in place to meet these needs. Over the last few weeks, there has been frequent communication with our
+                first-year students about their transition to Q University and this will continue as we approach the start of
+                the academic year.
+                <br>
+                <br>
+                We are committed to ensuring a secure and supportive learning environment for all students. While all
+                courses will be taught remotely, we understand that some students may not be able to learn successfully
+                in their current home learning environment. If a student believes they will have remote learning
+                challenges this fall, we ask that they please complete this form by Monday, July 13. Student submissions
+                will be reviewed by a committee of faculty and staff in order to identify what specific supports may be
+                needed, including whether it may be necessary for a student to reside on campus.
+                <br>
+                <br>
+                Accommodations in the Yard Dorms and the Houses will be adapted to meet new public health standards.
+                Enrolled undergraduate students who will be learning remotely from campus will live in single bedrooms
+                with a shared bathroom. Students will be distributed across the first-year dorms and a number of
+                upper-class Houses in order to achieve a maximum residential density of 40%. The dorms and Houses are
+                undergoing physical modifications to support our public health goals. These include enhanced cleaning
+                schedules, personal safety training and protective equipment for custodians, security guards, and House
+                staff, improved air handling and filtration in shared spaces, hand sanitizer and wipe stations, and
+                signage outlining our public health community guidelines.
+                <br>
+                <br>
+                <strong style="color: #780000;">Campus access will be restricted to safeguard our community’s
+                    health</strong>.There will be restrictions on
+                inter-house access to dining areas and to non-residential Q University buildings, with the exception of
+                Q  University Health Services. We hope to provide some access to athletic and recreational
+                facilities, as part of our commitment to overall wellness, though guidance for that is not yet final. No
+                off-campus visitors will be allowed into Q University buildings, and this will include enrolled Q University
+                students who are not in residence on campus. With these measures in place, we are confident that we can
+                support campus-based remote learning while also safeguarding our residential community’s health and
+                safety.
+                <br>
+                <br>
+                Move-in and move-out procedures and timelines will be different. While the academic calendar for the
+                fall semester will not change, there will be additional considerations for students who will be learning
+                remotely from campus. Students will receive instructions regarding the protocol for a phased arrival to
+                campus prior to the start of the semester. All students will move out for the semester by November 22
+                and will complete reading period and exam period from home. The standard process for granting exceptions
+                will be followed.
+                <br>
+                <br>
+                This decision has implications for our Athletics program. We anticipate that the Ivy League will issue a
+                decision on July 8 about fall sports competitions and training. Even in the absence of this guidance, we
+                acknowledge that our medium density plan will necessarily place limits on what athletic activities are
+                possible at Q University this fall. An enhanced focus on wellness will be important for all members of our
+                community. Wellness programming and resources will be developed by the Department of Athletics, Q
+                University Health Services’ Center for Health and Wellness, the Dean of Students Office and other
+                partnering organizations.</p>
+        </div>
+    </article>
+</section>
+<footer>
+    <p><small>Copyright &#169; 2020 - 2020 The President and Fellows of Q<br>CollegeThe QKey system, and the systems,
+        data, and other resources that require QKey authentication for access, are only for legitimate Q University
+        users. Use may be monitored, and improper use of the QKey system or those resources may result in disciplinary
+        action and civil and criminal charges.<br>PRIVACY ACCESSIBILITY HELP FAQ</small></p>
+</footer>
+<script>
+</script>
+</body>
+</html>

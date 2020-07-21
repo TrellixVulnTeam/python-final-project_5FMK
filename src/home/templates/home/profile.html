@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="icon"
+          href="http://uupload.ir/files/ak27_header.jpg"
+          type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: white
+  }
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin: left;
+
+}
+
+.column {
+  float: left;
+  width: 500px;
+  padding: 10px;
+  height: 400px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 550px;
+  overflow-x: hidden;
+  padding: 16px;
+  background-color: #780000;
+}
+
+.inform {
+  height: 100%;
+  position: fixed;
+  margin-left: 160px;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 50px;
+  display: block;
+  background-color: #780000;
+}
+
+.sidebar {
+  height: 100%;
+  width: 165px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #780000;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400px;
+  background-color: white
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+button {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: black;
+display: inline-block;
+border: none;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+button:hover {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+button:active {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+button:focus {
+text-align: center;
+outline: none;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+   .column {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <form action="{% url 'home:student' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-home"></i>Home</button>
+    </form>
+    <form action="{% url 'home:profile' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-user"></i> Profile</button>
+    </form>
+    <form action="{% url 'home:courses' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-book"></i> Courses</button>
+    </form>
+    <form action="{% url 'home:selection' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-check"></i><small><small>Register Courses</small></small></button>
+    </form>
+    <form action="{% url 'home:Drop' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-remove"></i><small>Drop Courses</small></button>
+    </form>
+    <form action="{% url 'home:point' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><small>Report Card</small></button>
+    </form>
+    <form action="{% url 'home:tuition' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-credit-card" aria-hidden="true"></i><small>Tuition</small>
+        </button>
+    </form>
+    <form action="{% url 'home:Logout' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit" style="position: absolute;display: block;bottom: 0;left: 0px;padding-bottom: 40px;"><i
+                class="fa fa-fw fa-sign-out"></i> Log Out
+        </button>
+    </form>
+</div>
+
+
+<div>
+    <div class="inform">
+        <img src="https://www.w3schools.com/tryit/avatar.png" alt="Photo" style="width:100px">
+        <hr style="margin-right: 60%;">
+        <br>
+        <div class="row">
+            <div class="column" style="background-color:#780000;">
+                <p>FirstName: {{student.FirstName}}</p>
+                <p>LastName: {{student.LastName}}</p>
+                <p>degree: {{student.Study}} of {{student.Major}}</p>
+                <p>Student ID: {{student.id}}</p>
+                <p>Education Field: {{student.Major}}</p>
+                <p>University: Q University</p>
+                <p>School: {{student.school}}</p>
+                <p>Entry Year: {{student.EntryYear}}</p>
+                <p>Date of Birth: {{student.DateOfBirth}}</p>
+
+            </div>
+            <div class="column" style="background-color:#780000;">
+                <p>SSN: {{SSN}}</p>
+                <p>Father's Name: {{student.FatherName}}</p>
+                <p>Phone Number: {{student.CellularPhoneNumber}}</p>
+                <p>Father's Phone Number: {{student.FatherCellularPhoneNumber}}</p>
+                <p>Mother's Phone Number: {{student.MotherCellularPhoneNumber}}</p>
+                <p>Address: {{student.Address}}</p>
+                <p>Debit Card Number: {{debit}}</p>
+                <p>Email: {{student.Email}}</p>
+            </div>
+        </div>
+        <form action="{% url 'home:edit' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="username" value={{username}}>
+            <input type="hidden" name="password" value={{password}}>
+            <button type="submit" style="text-decoration: underline;"><i class="fa fa-fw fa-pencil-square-o"></i>Change
+                Personal Information
+            </button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Q university</title>
+    <link rel="icon"
+          href="http://uupload.ir/files/ak27_header.jpg"
+          type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: right;
+      background-color: black;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+      img {
+        vertical-align: right;
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: black;
+      }
+      .topnav a:hover {
+        background-color: white;
+        color: black;
+      }
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav a:hover {
+      background-color: white;
+      color: black;
+      }
+      .topnav a.active {
+      background-color: black;
+      color: white;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      header {
+      background-color: #780000;
+      padding: 15x;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+      }
+      section {
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+      }
+      nav {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        background: #333333;
+        padding: 20px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      article {
+        -webkit-flex: 3;
+        -ms-flex: 3;
+        flex: 3;
+        background-color: white;
+        padding: 10px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-position: right;
+      }
+      footer {
+      background-color: black;
+      padding: 10px;
+      height: 100px;
+      text-align: center;
+      color: white;
+}
+
+button {
+  background-color: #780000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 280px;
+}
+button:hover {
+  opacity: 0.8;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+span.psw {
+  float: left;
+  padding: 16px;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="topnav">
+    <a class="active" href="{% url 'Login' %}">Home</a>
+    <a href="{% url 'News' %}">News</a>
+    <a href="{% url 'about' %}">About</a>
+</div>
+<header style="height: 200px;">
+    <!--    https://i.imgur.com/G8xgSYu.jpg-->
+    <img src="http://uupload.ir/files/slpm_logo.jpg"
+         alt="Q University" width="200" height="200">
+</header>
+<section>
+    <article>
+        <div class="container" style="width: 100%; padding: 50px;">
+            <h1 style="font-size: 40px;">Welcome to Q University Online Services</h1>
+            <p style="padding: 50px;"><strong style="color: #780000;">Q University's unified online user credential,
+                uniquely identifying you to
+                Q IT applications and services to grant you access to the resources you use every day.</strong>
+                <br>
+                <br>
+                We and our third-party vendors collect certain information regarding your use of www.QUniversity.edu,
+                such
+                as your IP address and browser type. Your session and the pages you visit on www.QUniversity.edu will be
+                tracked, but you will remain anonymous. We may use your IP address to identify the general geographic
+                area from which you are accessing QUniversity.edu. We connect data from different systems but do not
+                link IP
+                addresses to any personal information. We may also collect other information as described in this
+                policy.
+                <br>
+                <br>
+                We use the information we gather from you for systems administration purposes, abuse prevention, and to
+                track user trends, and for the other purposes described in this policy. If you send us an email, the
+                email address you provide may be used to send you information, respond to inquiries, and/or other
+                requests or questions. We will not share, sell, rent, swap, or authorize any third party to use your
+                email address for commercial purposes without your permission.
+                <br>
+                <br>
+                User information may be shared with third-party vendors to the extent necessary to provide and improve
+                web services or other communications to users. For example, we use third parties such as Chartbeat and
+                Google Analytics to generate reports on site usage, web traffic, user behavior, and user interests in
+                order to optimize our website for our visitors. We also use geographic, demographic, and interest-based
+                reports of our website visitors to create custom audience lists. We prohibit any third parties who
+                receive user information for this purpose from using or sharing user information for any purpose other
+                than providing services for the benefit of our users.
+                <br>
+                <br>
+                We may also provide your information to third parties in circumstances where we believe that doing so is
+                necessary or appropriate to satisfy any applicable law, regulation, legal process or governmental
+                request; detect, prevent or otherwise address fraud, security, or technical issues; or protect our
+                rights and safety and the rights and safety of our users or others.
+            </p>
+        </div>
+    </article>
+</section>
+<footer>
+    <p><small>Copyright &#169; 2020 - 2020 The President and Fellows of Q<br>CollegeThe QKey system, and the systems,
+        data, and other resources that require QKey authentication for access, are only for legitimate Q University
+        users. Use may be monitored, and improper use of the QKey system or those resources may result in disciplinary
+        action and civil and criminal charges.<br>PRIVACY ACCESSIBILITY HELP FAQ</small></p>
+</footer>
+<script>
+</script>
+</body>
+</html>

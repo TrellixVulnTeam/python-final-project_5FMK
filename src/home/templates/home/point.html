@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="icon"
+          href="http://uupload.ir/files/ak27_header.jpg"
+          type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: white
+  }
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin: left;
+
+}
+
+.column {
+  float: left;
+  width: 500px;
+  padding: 10px;
+  height: 400px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 550px;
+  overflow-x: hidden;
+  padding: 16px;
+  background-color: #780000;
+}
+
+.inform {
+  height: 100%;
+  position: fixed;
+  margin-left: 160px;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 50px;
+  display: block;
+  background-color: #780000;
+}
+
+.sidebar {
+  height: 100%;
+  width: 165px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #780000;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400px;
+  background-color: white
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+button {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: black;
+display: inline-block;
+border: none;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+button:hover {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+button:active {
+text-align: center;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+button:focus {
+text-align: center;
+outline: none;
+text-decoration: none;
+background-color: #780000;
+color: white;
+border: none;
+display: inline-block;
+font-size: 1.4em;
+padding: 10px;
+margin-left: 0;
+white-space: nowrap;
+cursor: pointer;
+}
+
+#table-wrapper {
+  position:relative;
+}
+
+#table-scroll {
+  height:400px;
+  overflow:auto;
+  margin-top:20px;
+}
+
+#table-wrapper table {
+  width:100%;
+}
+
+#table-wrapper table * {
+  background: white;
+  color:black;
+}
+
+#table-wrapper table th .text {
+  position:absolute;
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+   .column {
+    width: 100%;
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <form action="{% url 'home:student' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-home"></i>Home</button>
+    </form>
+    <form action="{% url 'home:profile' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-user"></i> Profile</button>
+    </form>
+    <form action="{% url 'home:courses' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-book"></i> Courses</button>
+    </form>
+    <form action="{% url 'home:selection' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-check"></i><small><small>Register Courses</small></small></button>
+    </form>
+    <form action="{% url 'home:Drop' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-remove"></i><small>Drop Courses</small></button>
+    </form>
+    <form action="{% url 'home:point' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><small>Report Card</small></button>
+    </form>
+    <form action="{% url 'home:tuition' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit"><i class="fa fa-fw fa-credit-card" aria-hidden="true"></i><small>Tuition</small>
+        </button>
+    </form>
+    <form action="{% url 'home:Logout' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{username}}>
+        <input type="hidden" name="password" value={{password}}>
+        <button type="submit" style="position: absolute;display: block;bottom: 0;left: 0px;padding-bottom: 40px;"><i
+                class="fa fa-fw fa-sign-out"></i> Log Out
+        </button>
+    </form>
+</div>
+
+
+<div>
+    <div class="inform">
+        <div class="row">
+            <div class="column" style="height: 110px;background-color: #780000;">
+                <form action="{% url 'home:calculate' %}" autocomplete="off" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="username" value={{username}}>
+                    <input type="hidden" name="password" value={{password}}>
+                    <label for="semester">Choose Semester:</label>
+                    <select name="semester" id="semester">
+                        <option value="semester1">semester1</option>
+                        <option value="semester2">semester2</option>
+                        <option value="semester3">semester3</option>
+                        <option value="semester4">semester4</option>
+                        <option value="semester5">semester5</option>
+                        <option value="semester6">semester6</option>
+                        <option value="semester7">semester7</option>
+                        <option value="semester8">semester8</option>
+                    </select>
+                    <button type="submit">Show</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column" style="background-color: #780000;">
+                <div id="table-wrapper">
+                    <div id="table-scroll">
+                        <table>
+                            <tr>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Professor</th>
+                                <th>Class</th>
+                                <th>Enrollment Capacity</th>
+                                <th>Date</th>
+                                <th>Final</th>
+                                <th>Final Point</th>
+                            </tr>
+                            {% for course in semester %}
+                            <tr>
+                                <td>{{course.id}}</td>
+                                <td>{{course.Course}}</td>
+                                <td>{{course.Teacher}}</td>
+                                <td>{{course.ClassNumber}}</td>
+                                <td>{{course.EnrollmentCapacity}}</td>
+                                <td>{{course.Date}}</td>
+                                <td>{{course.Final}}</td>
+                                <td>{{course.FinalPoint}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="column" style="background-color: #780000;padding: 100px;">
+                <h1>Overall Point (GPA):</h1>
+                <table>
+                    <tr>
+                        <th>GPA:</th>
+                        <th>{{GPA}}</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
